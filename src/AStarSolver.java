@@ -1,46 +1,28 @@
 import java.util.*;
 
-public class AStarSolver implements Solver<Board> {
+public class AStarSolver extends Solver<Board> {
 
-    private static HeuristicFunction<Board> heuristicFunction = null;
+    private HeuristicFunction<Board> heuristicFunction = null;
 
-    public AStarSolver(HeuristicFunction<Board> heuristicFunction) {
+    public AStarSolver(String name, HeuristicFunction<Board> heuristicFunction) {
+        super(name);
         this.heuristicFunction = heuristicFunction;
     }
 
-    private static class Node implements Comparable<Node> {
-        Board board;
-        int moves;
-        Node previous;
-        int priority; // This is 'f' in A*
-
-        public Node(Board board, int moves, Node previous) {
-            this.board = board;
-            this.moves = moves;
-            this.previous = previous;
-            this.priority = moves + heuristicFunction.exec(board);
-        }
-
-        @Override
-        public int compareTo(Node other) {
-            return Integer.compare(this.priority, other.priority);
-        }
-    }
-
-    public List<Board> solve(Board initial) {
-        PriorityQueue<Node> openSet = new PriorityQueue<>();
-        Set<Board> closedSet = new HashSet<>();
-        openSet.add(new Node(initial, 0, null));
-        int algorithmSteps = 0, solutionSteps = 0;
+    public Solution<Board> solve(Board initial) {
+        PriorityQueue<AStarNode> openSet = new PriorityQueue<>();
+        Set<Board> closedSet = new HashSet<Board>();
+        openSet.add(new AStarNode(initial, 0, null, heuristicFunction));
+        int algorithmSteps = 0;
 
         while (!openSet.isEmpty()) {
-            Node current = openSet.poll();
+            AStarNode current = openSet.poll();
             algorithmSteps++;
 
             if (current.board.isSolved()) {
                 List<Board> path = constructPath(current);
 
-                return path;
+                return new Solution<Board>(path, algorithmSteps, path.size());
             }
 
             closedSet.add(current.board);
@@ -48,18 +30,18 @@ public class AStarSolver implements Solver<Board> {
             for (Board neighbor : current.board.getNeighboringBoards()) {
                 if (closedSet.contains(neighbor))
                     continue;
-                openSet.add(new Node(neighbor, current.moves + 1, current));
+                openSet.add(new AStarNode(neighbor, current.moves + 1, current, heuristicFunction));
             }
         }
 
-        return Collections.emptyList(); // Return an empty list if no solution is found
+        return null; // Return an empty list if no solution is found
     }
 
-    private static List<Board> constructPath(Node node) {
+    private List<Board> constructPath(AStarNode AStarNode) {
         LinkedList<Board> path = new LinkedList<>();
-        while (node != null) {
-            path.addFirst(node.board);
-            node = node.previous;
+        while (AStarNode != null) {
+            path.addFirst(AStarNode.board);
+            AStarNode = AStarNode.previous;
         }
         return path;
     }

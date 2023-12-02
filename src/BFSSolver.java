@@ -1,13 +1,18 @@
 
 import java.util.*;
 
-public class BFSSolver implements Solver<Board>{
-    public BFSSolver() {
+public class BFSSolver extends Solver<Board> {
 
+    public BFSSolver(String name) {
+        super(name);
     }
-    public List<Board> solve(Board startBoard) {
+
+    public Solution<Board> solve(Board startBoard) {
+        List<Board> path = new ArrayList<>();
+        int algorithmSteps = 0, solutionSteps = 0;
+
         if (startBoard.isSolved()) {
-            return Collections.singletonList(startBoard);
+            path = Collections.singletonList(startBoard);
         }
 
         Queue<Board> queue = new LinkedList<>();
@@ -17,9 +22,11 @@ public class BFSSolver implements Solver<Board>{
 
         while (!queue.isEmpty()) {
             Board current = queue.poll();
+            algorithmSteps++;
 
             if (current.isSolved()) {
-                return buildPath(predecessors, current);
+                path = buildPath(predecessors, current);
+                break;
             }
 
             for (Board neighbor : current.getNeighboringBoards()) {
@@ -29,8 +36,9 @@ public class BFSSolver implements Solver<Board>{
                 }
             }
         }
+        solutionSteps = path.size();
 
-        return new ArrayList<>(); // No solution found
+        return new Solution<Board>(path, algorithmSteps, solutionSteps); // No solution found
     }
 
     private List<Board> buildPath(Map<Board, Board> predecessors, Board end) {

@@ -163,5 +163,4 @@ public class Board {
     public int[][] getGameState() {
         return gameState;
     }
-
 }

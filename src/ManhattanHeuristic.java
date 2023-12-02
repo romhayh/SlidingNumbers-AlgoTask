@@ -19,5 +19,5 @@ public class ManhattanHeuristic implements HeuristicFunction<Board> {
         }
         return distance;
     }
-    
+
 }
