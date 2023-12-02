@@ -28,10 +28,10 @@ public class Board {
     }
 
     private void initializeBoard() {
-        int num = 1;
+        int currentBoardTileValue = 1;
         for (int boardCol = 0; boardCol < size; boardCol++) {
-            for (int bobardRow = 0; bobardRow < size; bobardRow++) {
-                gameState[boardCol][bobardRow] = num++;
+            for (int boardRow = 0; boardRow < size; boardRow++) {
+                gameState[boardCol][boardRow] = currentBoardTileValue++;
             }
         }
         gameState[size - 1][size - 1] = 0;

@@ -3,1028 +3,130 @@ My solution to the Sliding Numbers task given in Algo course
 
 
 <h2 dir="rtl"> טבלאות זמני ריצה</h2>
-<p dir="rtl">
+
 פאזל 15 - 10 מהלכי ערבוב: 
-</p>
 
 
 
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
+### פאזל 1:
+<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td><td>8</td><td></td></tr><tr><td>9</td><td>10</td><td>7</td><td>15</td></tr><tr><td>13</td><td>14</td><td>12</td><td>11</td></tr></table><table><tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr><tr><td>BFS</td><td>836</td><td>9</td><td>9.12ms</td></tr><tr><td>Dijkstra</td><td>629</td><td>9</td><td>3.2ms</td></tr><tr><td>Manhattan</td><td>14</td><td>9</td><td>0.13ms</td></tr><tr><td>Incompatible</td><td>1480</td><td>9</td><td>4.69ms</td></tr></table>
 
-   </td>
-   <td><p dir="rtl">
-0</p>
+### פאזל 2:
+<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td><td>7</td><td>8</td></tr><tr><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>13</td><td></td><td>14</td><td>15</td></tr></table><table><tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr><tr><td>BFS</td><td>9</td><td>3</td><td>0.03ms</td></tr><tr><td>Dijkstra</td><td>6</td><td>3</td><td>0.02ms</td></tr><tr><td>Manhattan</td><td>3</td><td>3</td><td>0.02ms</td></tr><tr><td>Incompatible</td><td>163</td><td>3</td><td>0.44ms</td></tr></table>
 
-   </td>
-   <td><p dir="rtl">
-0</p>
 
-   </td>
-   <td><p dir="rtl">
-0</p>
+### פאזל 3:
+<table><tr><td></td><td>1</td><td>3</td><td>4</td></tr><tr><td>5</td><td>2</td><td>11</td><td>7</td></tr><tr><td>9</td><td>6</td><td>10</td><td>8</td></tr><tr><td>13</td><td>14</td><td>15</td><td>12</td></tr></table><table><tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr><tr><td>BFS</td><td>666</td><td>9</td><td>1.54ms</td></tr><tr><td>Dijkstra</td><td>779</td><td>9</td><td>1.89ms</td></tr><tr><td>Manhattan</td><td>9</td><td>9</td><td>0.05ms</td></tr><tr><td>Incompatible</td><td>7021</td><td>9</td><td>20.03ms</td></tr></table>
 
-   </td>
-   <td><p dir="rtl">
-0</p>
+### פאזל 4:
+<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td><td>7</td><td>8</td></tr><tr><td>9</td><td>15</td><td></td><td>11</td></tr><tr><td>13</td><td>10</td><td>14</td><td>12</td></tr></table><table><tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr><tr><td>BFS</td><td>278</td><td>7</td><td>0.67ms</td></tr><tr><td>Dijkstra</td><td>212</td><td>7</td><td>0.45ms</td></tr><tr><td>Manhattan</td><td>9</td><td>7</td><td>0.05ms</td></tr><tr><td>Incompatible</td><td>1304</td><td>11</td><td>2.9ms</td></tr></table>
 
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-37</p>
-
-   </td>
-   <td><p dir="rtl">
-48</p>
-
-   </td>
-   <td><p dir="rtl">
-4</p>
-
-   </td>
-   <td><p dir="rtl">
-8</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
+### פאזל 5:
+<table>
+  <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+  <tr><td>5</td><td>6</td><td>7</td></tr>
+  <tr><td>9</td><td>10</td><td>11</td><td>8</td></tr>
+  <tr><td>13</td><td>14</td><td>15</td><td>12</td></tr>
+</table>
+<table>
+  <tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr>
+  <tr><td>BFS</td><td>5</td><td>3</td><td>0.07ms</td></tr>
+  <tr><td>Dijkstra</td><td>10</td><td>3</td><td>0.13ms</td></tr>
+  <tr><td>Manhattan</td><td>3</td><td>3</td><td>0.04ms</td></tr>
+  <tr><td>Incompatible</td><td>7</td><td>3</td><td>0.08ms</td></tr>
 </table>
 
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-65</p>
-
-   </td>
-   <td><p dir="rtl">
-72</p>
-
-   </td>
-   <td><p dir="rtl">
-4</p>
-
-   </td>
-   <td><p dir="rtl">
-6</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-15</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-1440</p>
-
-   </td>
-   <td><p dir="rtl">
-777</p>
-
-   </td>
-   <td><p dir="rtl">
-8</p>
-
-   </td>
-   <td><p dir="rtl">
-14</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-9</p>
-
-   </td>
-   <td><p dir="rtl">
-9</p>
-
-   </td>
-   <td><p dir="rtl">
-9</p>
-
-   </td>
-   <td><p dir="rtl">
-9</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-45</p>
-
-   </td>
-   <td><p dir="rtl">
-48</p>
-
-   </td>
-   <td><p dir="rtl">
-4</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-37</p>
-
-   </td>
-   <td><p dir="rtl">
-70</p>
-
-   </td>
-   <td><p dir="rtl">
-4</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-</table>
-
-
-<p dir="rtl">
-</p>
-
-
-<p dir="rtl">
-פאזל 24 - 10 מהלכי ערבוב:</p>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-48</p>
-
-   </td>
-   <td><p dir="rtl">
-79</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-9375</p>
-
-   </td>
-   <td><p dir="rtl">
-9640</p>
-
-   </td>
-   <td><p dir="rtl">
-19</p>
-
-   </td>
-   <td><p dir="rtl">
-30</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-11</p>
-
-   </td>
-   <td><p dir="rtl">
-11</p>
-
-   </td>
-   <td><p dir="rtl">
-11</p>
-
-   </td>
-   <td><p dir="rtl">
-11</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-9</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-2</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-394</p>
-
-   </td>
-   <td><p dir="rtl">
-189</p>
-
-   </td>
-   <td><p dir="rtl">
-6</p>
-
-   </td>
-   <td><p dir="rtl">
-18</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-  </tr>
-</table>
-
-
-<p dir="rtl">
-</p>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-494</p>
-
-   </td>
-   <td><p dir="rtl">
-226</p>
-
-   </td>
-   <td><p dir="rtl">
-6</p>
-
-   </td>
-   <td><p dir="rtl">
-11</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-   <td><p dir="rtl">
-7</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-6</p>
-
-   </td>
-   <td><p dir="rtl">
-8</p>
-
-   </td>
-   <td><p dir="rtl">
-2</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-   <td><p dir="rtl">
-3</p>
-
-   </td>
-  </tr>
-</table>
-
-
-
-<p dir="rtl">
-פאזל 15 ערבוב 10 - ממוצע 50 הרצות:</p>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0.58</p>
-
-   </td>
-   <td><p dir="rtl">
-1.54</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-311.9</p>
-
-   </td>
-   <td><p dir="rtl">
-311.88</p>
-
-   </td>
-   <td><p dir="rtl">
-4.62</p>
-
-   </td>
-   <td><p dir="rtl">
-7.92</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5.2</p>
-
-   </td>
-   <td><p dir="rtl">
-5.2</p>
-
-   </td>
-   <td><p dir="rtl">
-5.2</p>
-
-   </td>
-   <td><p dir="rtl">
-5.2</p>
-
-   </td>
-  </tr>
-</table>
-
-
-<p dir="rtl">
-פאזל 24 ערבוב 10 ממוצע 50 הרצות: 
-</p>
-
-
-
-<table dir="rtl">
-  <tr>
-   <td>
-   </td>
-   <td>BFS
-   </td>
-   <td>dijkstra
-   </td>
-   <td>manhattan
-   </td>
-   <td>incompatible heuristic
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-זמן ריצה (מילי שניות)</p>
-
-   </td>
-   <td><p dir="rtl">
-0.92</p>
-
-   </td>
-   <td><p dir="rtl">
-1.26</p>
-
-   </td>
-   <td><p dir="rtl">
-0</p>
-
-   </td>
-   <td><p dir="rtl">
-0.02</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-מצבים שנבדקו</p>
-
-   </td>
-   <td><p dir="rtl">
-265.66</p>
-
-   </td>
-   <td><p dir="rtl">
-286.94</p>
-
-   </td>
-   <td><p dir="rtl">
-4.08</p>
-
-   </td>
-   <td><p dir="rtl">
-7.26</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td><p dir="rtl">
-אורך הפתרון</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-   <td><p dir="rtl">
-5</p>
-
-   </td>
-  </tr>
-</table>
 
 ---
-<h2 dir="rtl"> מסקנות מהעבודה </h2>
+### פאזל 24 - 10 מהלכי ערבוב:
 
+### פאזל 1:
+<table><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr><tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr><tr><td>16</td><td></td><td>17</td><td>18</td><td>20</td></tr><tr><td>21</td><td>22</td><td>23</td><td>19</td><td>24</td></tr></table><table><tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr><tr><td>BFS</td><td>78</td><td>5</td><td>0.27ms</td></tr><tr><td>Dijkstra</td><td>60</td><td>5</td><td>0.2ms</td></tr><tr><td>Manhattan</td><td>5</td><td>5</td><td>0.06ms</td></tr><tr><td>Incompatible</td><td>147</td><td>5</td><td>0.49ms</td></tr></table>
+
+
+### פאזל 2:
+<table>
+  <tr><td>1</td><td>2</td><td></td><td>3</td><td>4</td></tr>
+  <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>5</td></tr>
+  <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>10</td></tr>
+  <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>15</td></tr>
+  <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>20</td></tr>
+</table>
+<table>
+  <tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr>
+  <tr><td>BFS</td><td>340</td><td>7</td><td>2.24ms</td></tr>
+  <tr><td>Dijkstra</td><td>281</td><td>7</td><td>0.65ms</td></tr>
+  <tr><td>Manhattan</td><td>7</td><td>7</td><td>0.04ms</td></tr>
+  <tr><td>Incompatible</td><td>2412</td><td>7</td><td>5.47ms</td></tr>
+</table>
+
+
+### פאזל 3:
+<table>
+  <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+  <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+  <tr><td>11</td><td>12</td><td></td><td>13</td><td>15</td></tr>
+  <tr><td>16</td><td>17</td><td>18</td><td>14</td><td>24</td></tr>
+  <tr><td>21</td><td>22</td><td>23</td><td>20</td><td>19</td></tr>
+</table>
+<table>
+  <tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr>
+  <tr><td>BFS</td><td>2449</td><td>9</td><td>5.93ms</td></tr>
+  <tr><td>Dijkstra</td><td>2337</td><td>9</td><td>4.04ms</td></tr>
+  <tr><td>Manhattan</td><td>14</td><td>9</td><td>0.17ms</td></tr>
+  <tr><td>Incompatible</td><td>1020</td><td>9</td><td>1.96ms</td></tr>
+</table>
+
+### פאזל 4:
+<table>
+  <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+  <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+  <tr><td>11</td><td>12</td><td></td><td>14</td><td>15</td></tr>
+  <tr><td>16</td><td>17</td><td>13</td><td>18</td><td>20</td></tr>
+  <tr><td>21</td><td>22</td><td>23</td><td>19</td><td>24</td></tr>
+</table>
+<table>
+  <tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr>
+  <tr><td>BFS</td><td>54</td><td>5</td><td>0.11ms</td></tr>
+  <tr><td>Dijkstra</td><td>90</td><td>5</td><td>0.12ms</td></tr>
+  <tr><td>Manhattan</td><td>5</td><td>5</td><td>0.01ms</td></tr>
+  <tr><td>Incompatible</td><td>591</td><td>5</td><td>1.15ms</td></tr>
+</table>
+
+### פאזל 5:
+<table>
+  <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+  <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+  <tr><td>11</td><td>12</td><td>13</td><td>19</td><td>14</td></tr>
+  <tr><td>16</td><td>17</td><td>18</td><td></td><td>15</td></tr>
+  <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>20</td></tr>
+</table>
+<table>
+  <tr><th>Algorithm</th><th>Algorithm Steps</th><th>Solution Steps</th><th>Total Time</th></tr>
+  <tr><td>BFS</td><td>52</td><td>5</td><td>0.09ms</td></tr>
+  <tr><td>Dijkstra</td><td>82</td><td>5</td><td>0.11ms</td></tr>
+  <tr><td>Manhattan</td><td>5</td><td>5</td><td>0.01ms</td></tr>
+  <tr><td>Incompatible</td><td>12</td><td>5</td><td>0.03ms</td></tr>
+</table>
+
+
+----
+
+### 4X4
+<table>
+  <tr><th>Algorithm</th><th>Avg Algorithm Steps</th><th>Avg Solution Steps</th><th>Avg Total Time</th></tr>
+  <tr><td>BFS</td><td>213.9</td><td>5.44</td><td>0.42ms</td></tr>
+  <tr><td>Dijkstra</td><td>266.6</td><td>5.44</td><td>0.4ms</td></tr>
+  <tr><td>Manhattan</td><td>5.68</td><td>5.44</td><td>0.01ms</td></tr>
+  <tr><td>Incompatible</td><td>1132.98</td><td>5.44</td><td>2.04ms</td></tr>
+</table>
+
+
+### 5X5
+<table>
+  <tr><th>Algorithm</th><th>Avg Algorithm Steps</th><th>Avg Solution Steps</th><th>Avg Total Time</th></tr>
+  <tr><td>BFS</td><td>530.16</td><td>5.6</td><td>0.89ms</td></tr>
+  <tr><td>Dijkstra</td><td>500.96</td><td>5.6</td><td>0.82ms</td></tr>
+  <tr><td>Manhattan</td><td>5.82</td><td>5.6</td><td>0.01ms</td></tr>
+  <tr><td>Incompatible</td><td>2190.04</td><td>5.72</td><td>4.7ms</td></tr>
+</table>

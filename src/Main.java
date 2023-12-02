@@ -26,6 +26,7 @@ public class Main {
             String totalTime = formatter.format((double) (endTime - startTime) / 1_000_000);
 
             System.out.println(solver.name() + ": " + solution + ", total time: " + totalTime + "ms");
+            System.out.println();
         });
 
     }
