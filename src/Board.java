@@ -8,7 +8,6 @@ public class Board {
     private Point emptySlot;
     private int size;
 
-
     // Constructor with given gameState
     public Board(int[][] gameState) {
 
@@ -47,7 +46,7 @@ public class Board {
                 }
             }
         }
-        //Problems
+        // Problems
         return new Point(-1, -1);
     }
 
@@ -69,7 +68,7 @@ public class Board {
 
     private ArrayList<Point> getNeighbors(Point p) {
         ArrayList<Point> neighbors = new ArrayList<>();
-        int[][] directions = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int[][] directions = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
 
         for (int[] dir : directions) {
             int newX = p.x + dir[0];
@@ -96,7 +95,7 @@ public class Board {
         return true;
     }
 
-    public ArrayList<Board> generateNeighbors() {
+    public ArrayList<Board> getNeighboringBoards() {
         ArrayList<Point> neighbors = getNeighbors(emptySlot);
         ArrayList<Board> boards = new ArrayList<>();
 
@@ -109,30 +108,44 @@ public class Board {
         return boards;
     }
 
-    public void displayBoard() {
+    @Override
+    public String toString() {
+        String boardString = "";
+
         for (int boardCol = 0; boardCol < size; boardCol++) {
             for (int boardRow = 0; boardRow < size; boardRow++) {
                 if (gameState[boardCol][boardRow] == 0) {
-                    System.out.print("   "); // Display empty slot
+                    boardString += ("   "); // Display empty slot
                 } else {
-                    System.out.printf("%3d", gameState[boardCol][boardRow]);
+                    boardString += String.format("%3d", gameState[boardCol][boardRow]);
                 }
             }
-            System.out.println();
+
+            if (boardCol < size - 1) {
+                boardString += """
+
+                        """;
+            }
         }
+
+        return boardString;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
         Board other = (Board) obj;
 
-        if (this.size != other.size) return false;
+        if (this.size != other.size)
+            return false;
 
         for (int boardCol = 0; boardCol < size; boardCol++) {
             for (int boardRow = 0; boardRow < size; boardRow++) {
-                if (this.gameState[boardCol][boardRow] != other.gameState[boardCol][boardRow]) return false;
+                if (this.gameState[boardCol][boardRow] != other.gameState[boardCol][boardRow])
+                    return false;
             }
         }
         return true;
@@ -142,7 +155,6 @@ public class Board {
     public int hashCode() {
         return Arrays.deepHashCode(gameState);
     }
-
 
     public int getSize() {
         return size;

@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class BFSSolver {
+public class BFSSolver implements Solver<Board>{
     public BFSSolver() {
 
     }
@@ -22,7 +22,7 @@ public class BFSSolver {
                 return buildPath(predecessors, current);
             }
 
-            for (Board neighbor : current.generateNeighbors()) {
+            for (Board neighbor : current.getNeighboringBoards()) {
                 if (!predecessors.containsKey(neighbor)) {
                     queue.add(neighbor);
                     predecessors.put(neighbor, current);
@@ -35,9 +35,11 @@ public class BFSSolver {
 
     private List<Board> buildPath(Map<Board, Board> predecessors, Board end) {
         LinkedList<Board> path = new LinkedList<>();
+
         for (Board at = end; at != null; at = predecessors.get(at)) {
             path.addFirst(at);
         }
+
         return path;
     }
 
