@@ -1,5 +1,4 @@
-# SlidingNumbers-AlgoTask
-My solution to the Sliding Numbers task given in Algo course 
+ <h1 dir="rtl">מטלה להגשה אלגוריתמים 1</h1>
 
 
 <h2 dir="rtl"> טבלאות זמני ריצה</h2>
@@ -130,3 +129,10 @@ My solution to the Sliding Numbers task given in Algo course
   <tr><td>Manhattan</td><td>5.82</td><td>5.6</td><td>0.01ms</td></tr>
   <tr><td>Incompatible</td><td>2190.04</td><td>5.72</td><td>4.7ms</td></tr>
 </table>
+
+
+<h2 dir="rtl">מסקנות מהעבודה</h2>
+
+<p dir="rtl">
+ניתן לראות בקלות מן הנתונים איזה אלגוריתם הכי מהיר: A* כשפונקציית המרחק היא "מרחק-מנהטן", כמו כן, המצב יכול מאוד בקלות להתהפך, כי כשהפונקציה ההיורסטית היא לא קבילה, ניתן לראות כי לאלגוריתם לוקח דווקא אז את מספר הצעדים הגבוה ביותר
+</p>
